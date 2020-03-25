@@ -1,1 +1,1 @@
-Laravel Boilerplate made with CORE UI
+Laravel Boilerplate made with Adminty
