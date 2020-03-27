@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Reancirl Balaba</title>
+    <title>Made by | Reancirl Balaba</title>
     @include('inc.metatag')
     @include('inc.styles')
 </head>

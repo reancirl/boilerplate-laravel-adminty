@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Reancirl Balaba</title>
+        <title>Made by | Reancirl Balaba</title>
         <link rel="icon" href="{{asset('stack/img/agila.svg')}}" type="image/x-icon">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="{{asset('stack/css/iconsmind.css')}}" rel="stylesheet" type="text/css" media="all" />
