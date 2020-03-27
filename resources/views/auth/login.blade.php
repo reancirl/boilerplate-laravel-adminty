@@ -1,73 +1,81 @@
-@extends('layouts.app')
-
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
-
-                <div class="card-body">
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>DioceseOfIligan | Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="stack/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="stack/css/stack-interface.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="stack/css/theme.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="stack/css/custom.css" rel="stylesheet" type="text/css" media="all" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:200,300,400,400i,500,600,700" rel="stylesheet">
+        <style type="text/css">
+            .outline-1 {
+                color: black;
+                -webkit-text-stroke:2.1px #ffffff;
+                font-weight: bolder;
+                font-size: 3em;
+            }
+            .card-1{
+                background-color: white;
+                padding: 1em 3em 1em 3em;
+                height: 23em;
+                border: 2px solid #0078ff;
+            }
+        </style>
+    </head>
+    <body data-smooth-scroll-offset="77">
+        <div class="main-container">
+    <section class="imageblock switchable feature-large height-100 section--ken-burns bg--secondary">
+        <div class="imageblock__content col-lg-6 col-md-4 pos-right">
+            <div class="background-image-holder section--ken-burns" data-overlay="1"> <img alt="image" src="{{ asset('stack/img/landing-20.jpg')}}">
+            </div> 
+        </div>
+        <div class="container pos-vertical-center">
+            <div class="row">
+                <div class="col-lg-5 col-md-7 card-1">
+                    <hr data-title="Login here" style="border: 1px solid #0078ff;">
                     <form method="POST" action="{{ route('login') }}">
-                        @csrf
+                     @csrf
+                        <div class="row">
 
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
+                            <div class="col-12"> 
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email"placeholder="Email" autofocus>
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
-                                @enderror
+                                @enderror 
                             </div>
-                        </div>
 
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
+                            <div class="col-12"> 
+                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="Password">
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
                             </div>
-                        </div>
 
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
-                                </div>
+                            <div class="col-12"> 
+                                <button type="submit" class="btn btn--primary type--uppercase">{{ __('Login') }}</button> 
                             </div>
-                        </div>
 
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
+                            <div class="col-12"> 
+                                <span class="type--fine-print block">Forgot your username or password? <a href="{{ route('password.request') }}">Recover account</a></span>
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 </div>
-@endsection
+        <script src="stack/js/jquery-3.1.1.min.js"></script>
+        <script src="stack/js/parallax.js"></script>
+        <script src="stack/js/smooth-scroll.min.js"></script>
+        <script src="stack/js/scripts.js"></script>
+
+    </body>
+
+</html>
